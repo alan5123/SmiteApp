@@ -28,7 +28,7 @@ let godroute = `/${godId.Name}`
   
   </Route>
 
-  <Route path = {godroute}>
+  <Route path = {godroute.split(" ").join("")}>
   <div>
 <GodProfile gods = {godId}/>
 </div>

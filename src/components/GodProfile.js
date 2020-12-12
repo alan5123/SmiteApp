@@ -1,16 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "./GodProfile.css"
 
 const GodProfile = ({gods}) => {
 return(
-    <div className="GodContainer"> 
+    <div className = "GodProfileContainer"> 
+    
     <div>
 
-      <h2 className="GodName">{gods.Name}</h2>
-      <p className="GodName">{gods.Title}</p>
+    <img src={gods.godCard_URL} alt="gods" className = "GodCardImg"></img>
+ 
     </div>
     <div>
 
-      <img src={gods.godIcon_URL} alt="gods" className="GodImg"></img>
+    <h2 className="GodName">{gods.Name}</h2>
+      <p className="GodName">{gods.Title}</p>
+
+      <div className = "GodProfileInfo">
+          <div><p>{gods.Roles}</p></div>
+          <div><p>{gods.Pros}</p></div>
+      </div>
     </div>
 
 
