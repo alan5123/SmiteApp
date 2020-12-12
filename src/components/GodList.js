@@ -12,10 +12,10 @@ const api = new hirez.Smite({
   devId: config.devId,
   authKey: config.authKey,
 });
-export default function GodList(query) {
+export default function GodList({query, god, setGod, setGodId}) {
 
 
-  const [god, setGod] = useState([])
+  
 
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function GodList(query) {
       .then(response => {
         console.log(response);
         const characters = response.filter(character =>
-          character.Name.toLowerCase().includes(query.query.toLowerCase())
+          character.Name.toLowerCase().includes(query.toLowerCase())
         );
        
         setGod(characters);
@@ -65,7 +65,9 @@ export default function GodList(query) {
       {god.map(gods => {
         
 
-        return <GodCard gods={gods} key={gods.id} />
+        return <GodCard setGodId= {setGodId} gods={gods} key={gods.id} />
+        
+        
       })}
     </div>
 
